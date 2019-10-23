@@ -1,6 +1,9 @@
 name: Main
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   buildHtmlFile:
@@ -14,10 +17,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: bundle ./swagger.yaml
-      - name: Only masterbranch
-        uses: actions/bin/filter@712ea355b0921dd7aea27d81e247c48d0db24ee4
-        with:
-          args: branch master
       - name: Upload to s3
         uses: actions/aws/cli@master
         env:
