@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build html file
-        uses: yuta1031/GithubActions/redoc-cli@master
+        uses: yuta1031/github-actions/redoc-cli@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
