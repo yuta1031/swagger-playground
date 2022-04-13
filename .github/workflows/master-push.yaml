@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: bundle ./swagger.yaml
+          args: bundle ./swagger.yaml -o index.html
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
